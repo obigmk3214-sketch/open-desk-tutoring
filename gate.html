@@ -7,46 +7,45 @@
 <title>Open Desk Tutoring</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Public+Sans:wght@400;600;700&display=swap">
 <style>
 :root {
   --bg: #f6f7f2; --surface: #ffffff; --ink: #15211e; --muted: #55625e; --line: #dfe4dc;
-  --green: #12463f; --green-2: #1d5e55; --sun: #ffc845; --sun-soft: #ffeebd; --coral: #f2714f; --on-sun: #2a2100;
+  --green: #12463f; --green-2: #1d5e55; --sun: #ffc845; --sun-soft: #ffeebd; --coral: #b3402a; --on-sun: #2a2100; --btn: #1f4d45; --on-btn: #f4f7f5;
 }
 @media (prefers-color-scheme: dark) {
   :root { --bg: #0e1715; --surface: #15211e; --ink: #ecf1ec; --muted: #a3b2ad; --line: #26352f;
-    --green: #0a2b26; --green-2: #1a4a43; --sun: #ffcf5c; --sun-soft: #3a3115; --coral: #ff8b6b; color-scheme: dark; }
+    --green: #0a2b26; --green-2: #1a4a43; --sun: #ffcf5c; --sun-soft: #3a3115; --coral: #f08a72; --btn: #8cc4b3; --on-btn: #0f1a17; color-scheme: dark; }
 }
 * { box-sizing: border-box; }
 html, body { height: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Figtree", "Avenir Next", "Segoe UI", system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.6;
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Public Sans", "Helvetica Neue", "Segoe UI", system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.6;
   display: grid; place-items: center; padding: 24px 20px; }
-.card { width: 100%; max-width: 420px; background: var(--surface); border-radius: 22px; padding: 2.25rem 2rem; box-shadow: 0 1px 2px rgb(18 70 63 / .06), 0 12px 32px rgb(18 70 63 / .1); display: grid; gap: 1.25rem; position: relative; overflow: hidden; }
-.card::before { content: ""; position: absolute; right: -50px; top: -50px; width: 150px; height: 150px; border-radius: 50%; background: var(--sun-soft); }
-.brand { display: flex; align-items: center; gap: .65rem; font-family: "Young Serif", Georgia, serif; font-size: 1.35rem; position: relative; }
+.card { width: 100%; max-width: 420px; background: var(--surface); border-radius: 6px; padding: 2.25rem 2rem; border: 1px solid var(--line); display: grid; gap: 1.25rem; position: relative; overflow: hidden; }
+.brand { display: flex; align-items: center; gap: .65rem; font-family: "Newsreader", Georgia, serif; font-size: 1.3rem; font-weight: 500; position: relative; }
 .brand svg { width: 40px; height: 40px; flex: none; }
-h1 { font-family: "Young Serif", Georgia, serif; font-weight: 400; font-size: 1.9rem; line-height: 1.15; margin: 0; position: relative; }
+h1 { font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: 1.9rem; line-height: 1.15; margin: 0; position: relative; }
 p { margin: 0; color: var(--muted); }
 form { display: grid; gap: .9rem; }
 label { font-weight: 700; font-size: .92rem; }
 .field { display: grid; gap: .4rem; }
-input[type="password"] { width: 100%; font: inherit; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 12px; padding: .85rem .95rem; }
+input[type="password"] { width: 100%; font: inherit; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 6px; padding: .8rem .9rem; }
 input[type="password"]:focus { outline: none; border-color: var(--green-2); box-shadow: 0 0 0 4px color-mix(in srgb, var(--green-2) 18%, transparent); }
 .remember { display: flex; gap: .55rem; align-items: center; font-size: .95rem; color: var(--muted); }
 .remember input { width: 18px; height: 18px; accent-color: var(--green-2); }
-button { font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: .95rem 1.4rem; background: var(--sun); color: var(--on-sun); cursor: pointer; }
+button { font: inherit; font-weight: 700; border: 0; border-radius: 6px; padding: .9rem 1.3rem; background: var(--btn); color: var(--on-btn); cursor: pointer; }
 button:disabled { opacity: .6; cursor: progress; }
-button:focus-visible, input:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+button:focus-visible, input:focus-visible { outline: 2px solid #b7801a; outline-offset: 3px; }
 .err { color: var(--coral); font-weight: 700; font-size: .92rem; min-height: 1.4em; }
 </style>
 </head>
 <body>
 <main class="card">
   <div class="brand">
-    <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="#12463f"/><path d="M9 14c4-1.6 7.5-1.4 11 .8 3.5-2.2 7-2.4 11-.8v14c-4-1.6-7.5-1.4-11 .8-3.5-2.2-7-2.4-11-.8z" fill="#fff"/><path d="M20 14.8v14" stroke="#12463f" stroke-width="1.6"/><circle cx="30" cy="10" r="4" fill="#ffc845"/></svg>
-    Open Desk
+    <svg viewBox="0 0 30 30" aria-hidden="true" style="width:30px;height:30px"><rect width="30" height="30" rx="4" fill="#1f4d45"/><rect x="9" y="8" width="12" height="14" rx="1" fill="none" stroke="#f4f7f5" stroke-width="2"/></svg>
+    Open Desk Tutoring
   </div>
-  <h1>This site is private</h1>
+  <h1>Password required</h1>
   <p>Enter the password to see the Open Desk Tutoring website.</p>
   <form id="f">
     <div class="field">
